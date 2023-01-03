@@ -14,11 +14,11 @@ open class Eraser: Brush {
     
     open override func setupBlendOptions(for attachment: MTLRenderPipelineColorAttachmentDescriptor) {
         attachment.isBlendingEnabled = true
-        attachment.alphaBlendOperation = .reverseSubtract
-        attachment.rgbBlendOperation = .reverseSubtract
+        attachment.alphaBlendOperation = .min
+        attachment.rgbBlendOperation = .min
         attachment.sourceRGBBlendFactor = .zero
         attachment.sourceAlphaBlendFactor = .one
         attachment.destinationRGBBlendFactor = .oneMinusSourceAlpha
-        attachment.destinationAlphaBlendFactor = .one
+        attachment.destinationAlphaBlendFactor = .zero
     }
 }
